@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ppz-Ff-41e">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Obo-bd-eya">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -19,14 +19,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="TbB-aN-rVf">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="44" width="600" height="600"/>
                                 <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-rz-JAA">
-                                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-rz-JAA">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="xU3-rz-JAA" firstAttribute="centerY" secondItem="TbB-aN-rVf" secondAttribute="centerY" id="06Q-dq-oh7"/>
+                                    <constraint firstItem="xU3-rz-JAA" firstAttribute="centerX" secondItem="TbB-aN-rVf" secondAttribute="centerX" id="4F3-bc-fLd"/>
+                                    <constraint firstItem="xU3-rz-JAA" firstAttribute="centerY" secondItem="TbB-aN-rVf" secondAttribute="centerY" id="JB6-aQ-VYM"/>
                                     <constraint firstAttribute="bottom" secondItem="xU3-rz-JAA" secondAttribute="bottom" id="JJC-up-KXU"/>
                                     <constraint firstItem="xU3-rz-JAA" firstAttribute="leading" secondItem="TbB-aN-rVf" secondAttribute="leading" id="Lcj-W9-vcP"/>
                                     <constraint firstItem="xU3-rz-JAA" firstAttribute="top" secondItem="TbB-aN-rVf" secondAttribute="top" id="cHQ-H6-UTe"/>
@@ -58,7 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vjw-XN-mIS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="340" y="-337"/>
+            <point key="canvasLocation" x="1774" y="389"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -74,8 +76,10 @@
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="icz-ez-kpE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <gestureRecognizers/>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="39O-Q1-YLi"/>
+                                    <outletCollection property="gestureRecognizers" destination="4Qc-RZ-Hsq" appends="YES" id="fn2-fi-ffW"/>
                                 </connections>
                             </scrollView>
                         </subviews>
@@ -87,15 +91,38 @@
                             <constraint firstItem="icz-ez-kpE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hMV-WB-mcv"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="cn6-69-waX"/>
                     <connections>
                         <outlet property="scrollView" destination="icz-ez-kpE" id="iV5-1a-vjL"/>
+                        <segue destination="ppz-Ff-41e" kind="show" identifier="goToDetail" id="dRk-h0-Qdq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4Qc-RZ-Hsq">
+                    <connections>
+                        <action selector="tapped:" destination="BYZ-38-t0r" id="vPJ-Qc-7x5"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="1066" y="389"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="hFf-7F-YGQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Obo-bd-eya" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rnL-pU-3NV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="sb3-Bd-3p0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qq7-uP-I9m" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="254" y="389"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Lighthouse-in-Field" width="960" height="540"/>
-    </resources>
 </document>

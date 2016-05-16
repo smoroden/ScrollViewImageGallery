@@ -9,7 +9,7 @@
 #import "ImageDetailViewController.h"
 
 @interface ImageDetailViewController () <UIScrollViewDelegate>
-@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+
 
 @end
 
@@ -18,6 +18,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.imageView.image = self.image;
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -27,6 +31,12 @@
 
 -(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
     return self.imageView;
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    NSLog(@"%@", self.imageView.image);
 }
 
 
