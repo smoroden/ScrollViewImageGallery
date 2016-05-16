@@ -46,7 +46,9 @@
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:imgV1 attribute:NSLayoutAttributeRight multiplier:1 constant:0]];
     
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeCenterY multiplier:1 constant:0]];
-    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.view.frame.size.width]];
+    //[self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1 constant:self.view.frame.size.width]];
+    [self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeWidth multiplier:1 constant:0]];
+
     [self.view addConstraint:[NSLayoutConstraint constraintWithItem:imgV2 attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeHeight multiplier:1 constant:0]];
     
     

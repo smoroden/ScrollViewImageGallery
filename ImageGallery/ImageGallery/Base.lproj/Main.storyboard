@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Image Detail View Controller-->
@@ -20,8 +21,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.5" maximumZoomScale="4" translatesAutoresizingMaskIntoConstraints="NO" id="TbB-aN-rVf">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-rz-JAA">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                    <imageView multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Lighthouse-in-Field" translatesAutoresizingMaskIntoConstraints="NO" id="xU3-rz-JAA">
+                                        <rect key="frame" x="0.0" y="0.0" width="960" height="540"/>
                                     </imageView>
                                 </subviews>
                                 <constraints>
@@ -32,13 +33,22 @@
                                     <constraint firstItem="xU3-rz-JAA" firstAttribute="centerX" secondItem="TbB-aN-rVf" secondAttribute="centerX" id="rqL-Lb-e7d"/>
                                     <constraint firstAttribute="trailing" secondItem="xU3-rz-JAA" secondAttribute="trailing" id="rsA-92-jgu"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="06Q-dq-oh7"/>
+                                        <exclude reference="rqL-Lb-e7d"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="delegate" destination="ppz-Ff-41e" id="QoF-B2-8EX"/>
+                                </connections>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="TbB-aN-rVf" firstAttribute="centerX" secondItem="wKl-0O-Tt6" secondAttribute="centerX" id="3Ik-k8-BU6"/>
+                            <constraint firstItem="TbB-aN-rVf" firstAttribute="top" secondItem="vId-Mz-1hW" secondAttribute="bottom" constant="-20" id="7H5-oB-nvF"/>
+                            <constraint firstItem="TbB-aN-rVf" firstAttribute="leading" secondItem="wKl-0O-Tt6" secondAttribute="leadingMargin" constant="-20" id="fJm-SS-WSP"/>
                             <constraint firstItem="TbB-aN-rVf" firstAttribute="height" secondItem="wKl-0O-Tt6" secondAttribute="height" id="feH-hU-fRt"/>
-                            <constraint firstItem="TbB-aN-rVf" firstAttribute="centerY" secondItem="wKl-0O-Tt6" secondAttribute="centerY" id="jKZ-UJ-dwG"/>
                             <constraint firstItem="TbB-aN-rVf" firstAttribute="width" secondItem="wKl-0O-Tt6" secondAttribute="width" id="vqv-vs-sfU"/>
                         </constraints>
                     </view>
@@ -85,4 +95,7 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="Lighthouse-in-Field" width="960" height="540"/>
+    </resources>
 </document>
