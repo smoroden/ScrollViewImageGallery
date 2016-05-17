@@ -11,6 +11,7 @@
 
 @interface ViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIPageControl *pageControl;
 
 @property (nonatomic) UIImageView *imgV1;
 @property (nonatomic) UIImageView *imgV3;
@@ -23,6 +24,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    
+    //self.pageControl.numberOfPages = 3;
     
     // First image view
     self.imgV1 = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Lighthouse-in-Field"]];
@@ -103,6 +107,24 @@
     
     
     
+}
+- (IBAction)pageTapped:(UIPageControl *)sender {
+    if (sender.currentPage == 0) {
+        
+    }
+}
+
+-(void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    if(scrollView.contentOffset.x < 375) {
+        NSLog(@"point inside image1");
+        self.pageControl.currentPage = 0;
+    } else if (scrollView.contentOffset.x < 750) {
+        NSLog(@"point inside image2");
+        self.pageControl.currentPage = 1;
+    } else {
+        NSLog(@"point inside image3");
+        self.pageControl.currentPage = 2;
+    }
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

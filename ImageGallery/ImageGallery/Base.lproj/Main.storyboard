@@ -82,17 +82,26 @@
                                     <outletCollection property="gestureRecognizers" destination="4Qc-RZ-Hsq" appends="YES" id="fn2-fi-ffW"/>
                                 </connections>
                             </scrollView>
+                            <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="fnd-Su-bin">
+                                <rect key="frame" x="281" y="543" width="39" height="37"/>
+                                <connections>
+                                    <action selector="pageTapped:" destination="BYZ-38-t0r" eventType="valueChanged" id="XRc-XP-4Pk"/>
+                                </connections>
+                            </pageControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="icz-ez-kpE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3Ii-Hf-tKa"/>
                             <constraint firstItem="icz-ez-kpE" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="IeT-aJ-ezT"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="fnd-Su-bin" secondAttribute="bottom" constant="20" id="LGN-UC-Gfv"/>
                             <constraint firstItem="icz-ez-kpE" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="e3V-lr-bUx"/>
                             <constraint firstItem="icz-ez-kpE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hMV-WB-mcv"/>
+                            <constraint firstItem="fnd-Su-bin" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="llH-FH-Kzh"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cn6-69-waX"/>
                     <connections>
+                        <outlet property="pageControl" destination="fnd-Su-bin" id="eS0-O5-7JM"/>
                         <outlet property="scrollView" destination="icz-ez-kpE" id="iV5-1a-vjL"/>
                         <segue destination="ppz-Ff-41e" kind="show" identifier="goToDetail" id="dRk-h0-Qdq"/>
                     </connections>
